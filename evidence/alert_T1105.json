@@ -1,0 +1,104 @@
+{
+  "alert_1": {
+    "alert_id": "1780647025.1564865",
+    "timestamp": "2026-06-05T13:40:25+05:30",
+    "rule": {
+      "id": "92213",
+      "level": 15,
+      "description": "Executable file dropped in folder commonly used by malware",
+      "groups": ["sysmon", "sysmon_eid11_detections", "windows"],
+      "mitre": {
+        "technique": "Ingress Tool Transfer",
+        "id": "T1105",
+        "tactic": "Command and Control"
+      },
+      "firedtimes": 20,
+      "mail": true
+    },
+    "agent": {
+      "id": "001",
+      "name": "WindowsHost",
+      "ip": "10.0.2.15"
+    },
+    "manager": {
+      "name": "ubuntu"
+    },
+    "data": {
+      "win": {
+        "system": {
+          "providerName": "Microsoft-Windows-Sysmon",
+          "eventID": "11",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "computer": "Windows11Arm",
+          "systemTime": "2026-06-05T08:10:24.5283877Z",
+          "eventRecordID": "161075"
+        },
+        "eventdata": {
+          "ruleName": "technique_id=T1059.001,technique_name=PowerShell",
+          "utcTime": "2026-06-05 08:10:24.526",
+          "processGuid": "{3550f1cd-846e-6a22-c102-000000000700}",
+          "processId": "7764",
+          "image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+          "targetFilename": "C:\\Users\\Windows11\\AppData\\Local\\Temp\\__PSScriptPolicyTest_31ycbrhv.sng.ps1",
+          "creationUtcTime": "2026-06-05 08:10:24.526",
+          "user": "WINDOWS11ARM\\Windows11"
+        }
+      }
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    }
+  },
+  "alert_2": {
+    "alert_id": "1780647310.2392366",
+    "timestamp": "2026-06-05T13:45:10+05:30",
+    "rule": {
+      "id": "92213",
+      "level": 15,
+      "description": "Executable file dropped in folder commonly used by malware",
+      "groups": ["sysmon", "sysmon_eid11_detections", "windows"],
+      "mitre": {
+        "technique": "Ingress Tool Transfer",
+        "id": "T1105",
+        "tactic": "Command and Control"
+      }
+    },
+    "agent": {
+      "id": "001",
+      "name": "WindowsHost",
+      "ip": "10.0.2.15"
+    },
+    "data": {
+      "win": {
+        "system": {
+          "providerName": "Microsoft-Windows-Sysmon",
+          "eventID": "11",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "computer": "Windows11Arm",
+          "systemTime": "2026-06-05T08:15:09.8528770Z",
+          "eventRecordID": "162339"
+        },
+        "eventdata": {
+          "ruleName": "technique_id=T1059.001,technique_name=PowerShell",
+          "utcTime": "2026-06-05 08:15:09.850",
+          "image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+          "targetFilename": "C:\\Users\\Windows11\\AppData\\Local\\Temp\\__PSScriptPolicyTest_bp4qykwl.qr1.ps1",
+          "user": "WINDOWS11ARM\\Windows11"
+        }
+      }
+    }
+  },
+  "session_summary": {
+    "date": "2026-06-05",
+    "analyst": "Rahul Yadav",
+    "agent": "WindowsHost (001)",
+    "total_events": 1263,
+    "alerts_level_12_plus": 58,
+    "authentication_failures": 13,
+    "authentication_successes": 2,
+    "rule_92213_fires": 20,
+    "mitre_techniques_detected": ["T1105", "T1110", "T1055", "T1059.001"],
+    "mitre_tactics_detected": ["Command and Control", "Execution", "Lateral Movement", "Persistence", "Privilege Escalation", "Defense Evasion", "Credential Access"]
+  }
+}
